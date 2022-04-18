@@ -1,0 +1,21 @@
+{
+  "name": "@funty/funty-canvas",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FuntyGithub/funtyCanvas.git"
+  },
+  "author": "Funty#8818",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/FuntyGithub/funtyCanvas/issues"
+  },
+  "homepage": "https://github.com/FuntyGithub/funtyCanvas#readme",
+  "dependencies": {
+    "canvas": "^2.9.1",
+    "discord.js": "^13.6.0"
+  },
+  "description": "All my canvas generating stuff together"
+}

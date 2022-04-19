@@ -1,5 +1,6 @@
 const { MessageAttachment } = require('discord.js');
 const { createCanvas, loadImage  } = require('canvas')
+const path = require('path');
 
 // hug image generator
 exports.createHugImage = async function (imageURL, size = {x: 112, y: 112}, bgColor = '#00000000', picPos = {x: 1, y: 45}, picRotation = 0) {
@@ -13,7 +14,7 @@ exports.createHugImage = async function (imageURL, size = {x: 112, y: 112}, bgCo
     ctx.fillRect(0, 0, size.x, size.y);
 
     //draw hug pepe
-    let pepe = await loadImage('./img/hugImage/pepe.png');
+    let pepe = await loadImage(path.join(__dirname, '../img/hugImage/pepe.png'));
     ctx.drawImage(pepe , 0, 0, canvas.width, canvas.height);
 
     // draw profile picture
@@ -23,7 +24,7 @@ exports.createHugImage = async function (imageURL, size = {x: 112, y: 112}, bgCo
     ctx.rotate(-picRotation * Math.PI / 180);
 
     // draw Hug arms
-    let arms = await loadImage('./img/hugImage/arms.png');
+    let arms = await loadImage(path.join(__dirname, '../img/hugImage/arms.png'));
     ctx.drawImage(arms , 0, 0, canvas.width, canvas.height);
 
     // return image

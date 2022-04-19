@@ -4,4 +4,4 @@ Time: [![wakatime](https://wakatime.com/badge/user/6dcad35f-5e14-44f1-8e50-62062
 
 This package gives you functions for everything I've done with Canvas. You can find more information in the Wiki!
 
-# [npm](https://www.npmjs.com/package/@funty/funty-canvas)
+# [npm](https://www.npmjs.com/package/@funty/funty-canvas) | [wiki](https://github.com/FuntyGithub/funtyCanvas/wiki)

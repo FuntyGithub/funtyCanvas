@@ -102,28 +102,29 @@ exports.createCaptcha = async function({length = 5, bgColor = "#" + randomInt(0,
     return {solution, image}
 
 
-    // function to get a random color
-    function randomColor(bgColor, bgColorDiff) {
-        do {
-            charColor = "#" + randomInt(0, 16777215).toString(16)
 
-            charColorR = parseInt(charColor.substring(1, 3), 16)
-            charColorG = parseInt(charColor.substring(3, 5), 16)
-            charColorB = parseInt(charColor.substring(5, 7), 16)
+}
 
-            bgColorR = parseInt(bgColor.substring(1, 3), 16)
-            bgColorG = parseInt(bgColor.substring(3, 5), 16)
-            bgColorB = parseInt(bgColor.substring(5, 7), 16)
+// function to get a random color
+function randomColor(bgColor, bgColorDiff) {
+    do {
+        charColor = "#" + randomInt(0, 16777215).toString(16)
 
-            if (bgColorDiff.R > Math.abs(bgColorR - charColorR) || bgColorDiff.G > Math.abs(bgColorG - charColorG) || bgColorDiff.B > Math.abs(bgColorB - charColorB)) charColor = bgColor
+        charColorR = parseInt(charColor.substring(1, 3), 16)
+        charColorG = parseInt(charColor.substring(3, 5), 16)
+        charColorB = parseInt(charColor.substring(5, 7), 16)
 
-        } while (charColor == bgColor)
-        return charColor
-    }
+        bgColorR = parseInt(bgColor.substring(1, 3), 16)
+        bgColorG = parseInt(bgColor.substring(3, 5), 16)
+        bgColorB = parseInt(bgColor.substring(5, 7), 16)
 
-    // function to get a random integer between min and max
-    function randomInt(min, max) { 
-        return Math.floor(Math.random() * (max - min + 1) + min)
-    }
+        if (bgColorDiff.R > Math.abs(bgColorR - charColorR) || bgColorDiff.G > Math.abs(bgColorG - charColorG) || bgColorDiff.B > Math.abs(bgColorB - charColorB)) charColor = bgColor
 
+    } while (charColor == bgColor)
+    return charColor
+}
+
+// function to get a random integer between min and max
+function randomInt(min, max) { 
+    return Math.floor(Math.random() * (max - min + 1) + min)
 }

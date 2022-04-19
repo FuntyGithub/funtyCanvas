@@ -1,5 +1,6 @@
 const { MessageAttachment } = require('discord.js');
 const { createCanvas, loadImage  } = require('canvas')
+const path = require('path');
 
 // sus image generator
 exports.createSusImage = async function (imageURL, size = {x: 128, y: 71}, bgColor = '#00000000') {
@@ -16,14 +17,14 @@ exports.createSusImage = async function (imageURL, size = {x: 128, y: 71}, bgCol
     ctx.drawImage(userImage , 0, 0, canvas.width, canvas.height);
 
     // draw eyes
-    let eyes = await loadImage("https://github.com/FuntyGithub/susGeneratorBot/blob/main/img/eyes.png?raw=true");
+    let eyes = await loadImage(path.join(__dirname,'../img/susImage/eyes.png'));
     ctx.drawImage(eyes , 0, 0, canvas.width, canvas.height);
 
     // set global composite operation so we can draw the eyes transparently
     ctx.globalCompositeOperation = "xor";
 
     // draw temlpate eyes
-    let templateImage = await loadImage("https://github.com/FuntyGithub/susGeneratorBot/blob/main/img/template.png?raw=true");
+    let templateImage = await loadImage(path.join(__dirname,'../img/susImage/template.png'));
     ctx.drawImage(templateImage , 0, 0, canvas.width, canvas.height);
 
     // return image

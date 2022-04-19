@@ -1,6 +1,6 @@
 {
   "name": "@funty/funty-canvas",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "main": "index.js",
   "scripts": {},
   "repository": {
@@ -17,10 +17,5 @@
     "canvas": "^2.9.1",
     "discord.js": "^13.6.0"
   },
-  "description": "All my canvas generating stuff together",
-  "files": [
-    "src/susImage.js",
-    "src/captcha.js",
-    "index.js"
-  ]
+  "description": "All my canvas generating stuff together"
 }

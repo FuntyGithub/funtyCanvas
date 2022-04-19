@@ -1,3 +1,6 @@
+const { MessageAttachment } = require('discord.js');
+const { createCanvas, loadImage  } = require('canvas')
+
 // captcha generator
 exports.createCaptcha = async function({length = 5, bgColor = "#" + randomInt(0, 16777215).toString(16), bgColorDiff = {R: 20, G: 20, B: 20}, decoys = {amount: 40, sizeMin: 10, sizeMax: 25}, randomCharOrder = true, characters = "ABCDEFGHJKLMNOPQRSTUVWXYZabefgjmnqrty123456789!#@%!@#$%^&*()", width = 600, height = 400, minCharacterSize = 30, maxCharacterSize = undefined, characterColor = undefined, lineColor = undefined, decoyColor = undefined}) {
     var solution = ""
@@ -94,7 +97,7 @@ exports.createCaptcha = async function({length = 5, bgColor = "#" + randomInt(0,
         captcha.rotate(-rotation * Math.PI / 180)
     }
 
-    const image = new Discord.MessageAttachment(canvas.toBuffer(), "captcha.png")
+    const image = new MessageAttachment(canvas.toBuffer(), "captcha.png")
     return {solution, image}
 
 

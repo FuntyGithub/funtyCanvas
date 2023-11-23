@@ -6,3 +6,4 @@ module.exports.createHugImage = require(path.join(__dirname,'src/hugImage.js')).
 
 // Experimental
 module.exports.createOilPainting = require(path.join(__dirname,'src/oilPainting.js')).createOilPainting;
+module.exports.createSusifyImage = require(path.join(__dirname,'src/susifyImage.js')).createSusifyImage;

@@ -3,7 +3,7 @@ const { createCanvas, loadImage  } = require('canvas')
 const path = require('path');
 
 // sus image generator
-exports.createSusImage = async function (imageURL, size = {x: 128, y: 71}, bgColor = '#00000000') {
+exports.createSusImage = async function (imageURL, size = {x: 128, y: 71}) {
     // create canvas
     const canvas = createCanvas(size.x, size.y);
     const ctx = canvas.getContext('2d');
